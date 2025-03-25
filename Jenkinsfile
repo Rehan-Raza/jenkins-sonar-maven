@@ -45,35 +45,6 @@ pipeline {
 }
 
         
-        stage('build'){
-            steps{
-                script{
-                    sh 'docker build -t rehan1114/myimg .'
-                }
-            }
+      
         }
-        
-         stage('login'){
-            steps{
-                script{
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                }
-            }
-        }
-        
-        stage('push'){
-            steps{
-                script{
-                    sh 'docker push rehan1114/myimg'
-                }
-            }
-        }
-        
-         stage('docker run'){
-            steps{
-                script{
-                    sh 'docker run -d --name my-cont -p 8081:8081 rehan1114/myimg'
-                }
-            }
-        }
-    }
+    
