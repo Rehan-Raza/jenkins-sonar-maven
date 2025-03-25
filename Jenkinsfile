@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install || true'  // Always proceed, analyze errors next
+                sh 'mvn clean'  // Always proceed, analyze errors next
             }
         }
         stage('Evaluate Test Results') {
